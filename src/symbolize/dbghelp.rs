@@ -68,6 +68,7 @@ pub fn resolve(addr: *mut c_void, cb: &mut FnMut(&super::Symbol)) {
                                           &mut displacement,
                                           info);
         if ret != TRUE {
+            println!("error: {}", ::std::io::Error::last_os_error());
             return
         }
 
